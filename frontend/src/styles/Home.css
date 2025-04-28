@@ -1,0 +1,20 @@
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(20, 184, 166, 0.1) 100%);
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+.faq-item {
+  @apply transition-all duration-300;
+}
+
+.faq-item:hover {
+  @apply shadow-lg;
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+

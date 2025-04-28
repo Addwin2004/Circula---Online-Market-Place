@@ -1,0 +1,126 @@
+/* AdminFeedback.css */
+
+/* Reuse styles from AdminPurchase for consistency */
+.zephyrix-page-title,
+.zephyrix-controls-container,
+.zephyrix-search-section,
+.zephyrix-search-bar,
+.zephyrix-search-bar input,
+.zephyrix-search-bar input::placeholder,
+.zephyrix-filter-section,
+.zephyrix-filter-group,
+.zephyrix-filter-group label,
+.zephyrix-filter-group select,
+.zephyrix-filter-group select:focus,
+.zephyrix-table-container,
+.zephyrix-table,
+.zephyrix-table th,
+.zephyrix-table td,
+.zephyrix-sortable-header,
+.zephyrix-header-content,
+.zephyrix-row:hover,
+.zephyrix-action-buttons,
+.zephyrix-view-button,
+.zephyrix-view-button:hover,
+.zephyrix-no-results,
+.zephyrix-loading,
+.zephyrix-spinner,
+.zephyrix-modal-overlay,
+.zephyrix-modal-content,
+.zephyrix-modal-header,
+.zephyrix-modal-header h2,
+.zephyrix-close-button,
+.zephyrix-close-button:hover,
+.zephyrix-modal-body,
+.zephyrix-details,
+.zephyrix-detail-section,
+.zephyrix-detail-section h3,
+.zephyrix-detail-grid,
+.zephyrix-detail-item,
+.zephyrix-detail-label,
+.zephyrix-detail-value {
+  /* Inherit styles from AdminPurchase.css */
+}
+
+/* Star Rating Styles */
+.zephyrix-star-rating {
+  display: flex;
+  gap: 2px;
+}
+
+.zephyrix-star-filled {
+  color: #f59e0b; /* Amber color for filled stars */
+  fill: #f59e0b;
+}
+
+.zephyrix-star-empty {
+  color: #6b7280; /* Gray for empty stars */
+  fill: none;
+}
+
+/* Full Comment in Modal */
+.zephyrix-full-comment {
+  flex-direction: column;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Adjust table column widths if needed */
+.zephyrix-table th:nth-child(1),
+.zephyrix-table td:nth-child(1) {
+  width: 15%; /* Feedback ID */
+}
+
+.zephyrix-table th:nth-child(2),
+.zephyrix-table td:nth-child(2) {
+  width: 20%; /* User */
+}
+
+.zephyrix-table th:nth-child(3),
+.zephyrix-table td:nth-child(3) {
+  width: 15%; /* Rating */
+}
+
+.zephyrix-table th:nth-child(4),
+.zephyrix-table td:nth-child(4) {
+  width: 30%; /* Message */
+}
+
+.zephyrix-table th:nth-child(5),
+.zephyrix-table td:nth-child(5) {
+  width: 15%; /* Date */
+}
+
+.zephyrix-table th:nth-child(6),
+.zephyrix-table td:nth-child(6) {
+  width: 15%; /* Actions */
+}
+
+/* Add to AdminFeedback.css */
+
+/* Style for the export button */
+.zephyrix-export-button {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background-color: #4caf50; /* Green color for export button */
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.zephyrix-export-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Ensure filter-section layout accommodates the export button */
+.zephyrix-filter-section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}

@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Root variables - using CSS custom properties */
+:root {
+  --primary: 139, 92, 246;        /* #8B5CF6 in RGB */
+  --primary-light: 196, 181, 253; /* #C4B5FD in RGB */
+  --secondary: 244, 114, 182;     /* #F472B6 in RGB */
+  --secondary-light: 251, 207, 232; /* #FBCFE8 in RGB */
+  --background: 243, 244, 246;    /* #F3F4F6 in RGB */
+  --text: 31, 41, 55;            /* #1F2937 in RGB */
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply antialiased text-gray-800 bg-gray-50;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-violet-500 to-pink-500 bg-clip-text text-transparent;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Header styles */
+  .header-background {
+    @apply bg-white/70 backdrop-blur-sm;
+  }
+
+  .header-background-scrolled {
+    @apply bg-white/90 backdrop-blur-md shadow-lg;
+  }
+
+  .header-logo {
+    @apply text-2xl font-bold bg-gradient-to-r from-violet-600 to-pink-600 bg-clip-text text-transparent drop-shadow-sm;
+  }
+
+  .header-tagline {
+    @apply text-xs text-gray-600 ml-2 hidden md:inline-block;
+  }
+
+  .nav-link {
+    @apply relative text-gray-700 hover:text-violet-600 transition-colors;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-violet-500 transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Home styles */
+  .hero-gradient {
+    background: linear-gradient(135deg, rgb(var(--primary-light)) 0%, rgb(var(--secondary-light)) 100%);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .faq-item {
+    @apply transition-all duration-300;
+  }
+
+  .faq-item:hover {
+    @apply shadow-lg;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  /* Footer styles */
+  .footer-background {
+    @apply bg-white;
+  }
+
+  .footer-text {
+    @apply text-gray-600 hover:text-violet-600 transition-colors;
+  }
+
+  .footer-heading {
+    @apply text-gray-800 font-semibold;
+  }
+
+  .footer-divider {
+    @apply border-gray-200;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+body.admin-page {
+  overflow: hidden;
+}

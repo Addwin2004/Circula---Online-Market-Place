@@ -1,0 +1,103 @@
+/* Footer.css */
+.footer {
+  background: linear-gradient(to bottom, white, #f5f3ff); /* Gradient from white to violet */
+  padding: 3rem 0; /* Equivalent to py-12 */
+  border-top: 1px solid #ede9fe; /* Light violet border */
+}
+
+.footer-container {
+  max-width: 1200px; /* Container width */
+  margin: 0 auto;
+  padding: 0 1rem; /* Equivalent to px-4 */
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Single column layout by default */
+  gap: 2rem; /* Equivalent to gap-8 */
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for medium screens and above */
+  }
+}
+
+.brand-section {
+  grid-column: span 1;
+}
+
+.brand-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.brand-name {
+  font-size: 1.5rem; /* Equivalent to text-2xl */
+  font-weight: bold;
+  background: linear-gradient(to right, #7c3aed, #ec4899); /* Violet to pink gradient */
+  
+  /* Background-clip with vendor prefixes for compatibility */
+  background-clip: text; /* Standard */
+  -webkit-background-clip: text; /* WebKit browsers (Chrome, Safari, Edge Chromium) */
+
+  /* Text fill color with WebKit-specific property */
+  -webkit-text-fill-color: transparent; /* Makes the text transparent */
+  color: transparent; /* Fallback for non-supporting browsers */
+}
+
+
+
+
+.brand-tagline {
+  font-size: 0.875rem; /* Equivalent to text-sm */
+  color: #4b5563; /* Gray color */
+  margin-top: 0.5rem;
+}
+
+.brand-description {
+  font-size: 0.875rem; /* Equivalent to text-sm */
+  color: #4b5563; /* Gray color */
+  line-height: 1.5;
+}
+
+.section-title {
+  font-weight: 600; /* Semi-bold */
+  color: #1f2937; /* Dark gray */
+  margin-bottom: 1rem;
+}
+
+.links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links-list li {
+  margin-bottom: 0.75rem; /* Space between links */
+}
+
+.nav-link {
+  font-size: 0.875rem; /* Equivalent to text-sm */
+  color: #4b5563; /* Gray color */
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #7c3aed; /* Violet color */
+}
+
+.copyright-section {
+  margin-top: 3rem; /* Equivalent to mt-12 */
+  padding-top: 1.5rem; /* Equivalent to pt-6 */
+  border-top: 1px solid #ede9fe; /* Light violet border */
+  text-align: center;
+}
+
+.copyright-text {
+  font-size: 0.875rem; /* Equivalent to text-sm */
+  color: #4b5563; /* Gray color */
+}

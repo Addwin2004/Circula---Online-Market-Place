@@ -1,0 +1,181 @@
+/* Profile container */
+.profile-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f9fafb;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+  
+  .sidebar-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 2rem;
+  }
+  
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    color: #4b5563;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar-item:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .sidebar-item.active {
+    background-color: #e0e7ff;
+    color: #4f46e5;
+  }
+  
+  .sidebar-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.75rem;
+  }
+  
+  /* Content styles */
+  .profile-content {
+    flex: 1;
+    padding: 2rem;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Search bar styles */
+  .search-bars {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: transparent;
+    box-shadow: none;
+    position: relative;
+    width: fit-content;
+  }
+  
+  .search-bars input {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 8px 8px 8px 32px;
+    width: 250px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 40px;
+  }
+  
+  .search-icon-sold {
+    position: absolute;
+    left: 10px;
+    color: #666;
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .search-bars input:focus + .search-icon-sold {
+    color: #333;
+  }
+  
+  /* Sold items grid */
+  .sold-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .sold-item-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .item-infos {
+    padding-top: 10px;
+  }
+  
+  .item-price {
+    font-weight: bold;
+    color: #2ecc71;
+  }
+  
+  .sale-date {
+    color: #666;
+  }
+  
+  .buyer-info {
+    color: #333;
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  .no-items {
+    text-align: center;
+    color: #666;
+    margin-top: 20px;
+  }
+  
+  .loading,
+  .error {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .profile-container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      padding: 1rem;
+    }
+  
+    .profile-content {
+      padding: 1rem;
+    }
+  
+    .search-bars {
+      width: 100%;
+    }
+  
+    .search-bars input {
+      width: 100%;
+      padding-left: 32px;
+    }
+  }
+  
+  

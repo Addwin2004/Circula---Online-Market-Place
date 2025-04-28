@@ -1,0 +1,358 @@
+.page-title {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.item-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: rgb(31, 41, 55);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  width: 300px;
+}
+
+.search-bar input {
+  background: none;
+  border: none;
+  color: white;
+  margin-left: 0.5rem;
+  width: 100%;
+}
+
+.search-bar input::placeholder {
+  color: rgb(156, 163, 175);
+}
+
+.filter-select {
+  background-color: rgb(31, 41, 55);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  padding: 0.5rem 2rem 0.5rem 1rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1.5em 1.5em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.filter-select:hover {
+  background-color: rgb(39, 51, 69);
+}
+
+.item-table-container {
+  background-color: rgb(31, 41, 55);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.item-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.item-table th,
+.item-table td {
+  padding: 1rem;
+  text-align: left;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sortable-header {
+  cursor: pointer;
+  background-color: rgb(55, 65, 81);
+  font-weight: 600;
+  transition: background-color 0.2s;
+  padding: 1rem;
+  width: auto;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.sortable-header:hover {
+  background-color: rgb(75, 85, 99);
+}
+
+.item-row {
+  transition: background-color 0.2s;
+}
+
+.item-row:hover {
+  background-color: rgba(55, 65, 81, 0.5);
+}
+
+.action-button {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-right: 0.5rem;
+}
+
+.action-button.show-more {
+  background-color: rgb(59, 130, 246);
+  color: white;
+}
+
+.action-button.show-more:hover {
+  background-color: rgb(37, 99, 235);
+}
+
+.action-button.delete {
+  background-color: rgb(239, 68, 68);
+  color: white;
+}
+
+.action-button.delete:hover {
+  background-color: rgb(220, 38, 38);
+}
+
+.search-section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.filter-section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Enhanced Styling for Show All Items Filter */
+.show-all-filter {
+  display: flex;
+  align-items: center;
+  color: rgb(209, 213, 219); /* Improved contrast for readability */
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.show-all-filter input[type="checkbox"] {
+  display: none; /* Hide default checkbox */
+}
+
+.show-all-filter .checkbox-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: rgb(31, 41, 55);
+  border: 2px solid rgb(55, 65, 81);
+  border-radius: 0.25rem;
+  margin-right: 0.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.show-all-filter input[type="checkbox"]:checked + .checkbox-custom {
+  background-color: rgb(59, 130, 246); /* Blue when checked, matching action buttons */
+  border-color: rgb(59, 130, 246);
+}
+
+.show-all-filter .checkbox-custom::after {
+  content: "✔"; /* Checkmark symbol */
+  color: white;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.show-all-filter input[type="checkbox"]:checked + .checkbox-custom::after {
+  opacity: 1;
+}
+
+.show-all-filter:hover .checkbox-custom {
+  border-color: rgb(75, 85, 99); /* Subtle hover effect */
+}
+
+.show-all-filter:hover {
+  color: white; /* Lighten text on hover for better feedback */
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: rgb(31, 41, 55);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  color: white;
+  box-sizing: border-box;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(55, 65, 81);
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: white;
+}
+
+.close-button:hover {
+  opacity: 0.7;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box;
+}
+
+.item-info {
+  background-color: rgb(17, 24, 39);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  word-wrap: break-word; /* Allow long words to break */
+  overflow-wrap: break-word; /* Newer version of word-wrap */
+}
+
+.item-info h3 {
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.item-info p {
+  margin: 0.75rem 0;
+  color: rgb(209, 213, 219);
+  line-height: 1.5; /* Improve readability */
+  max-width: 100%; /* Ensure text doesn't overflow container */
+}
+/* Add styles for the description specifically */
+.item-info p strong + span { /* Target the description text */
+  display: inline-block;
+  white-space: pre-wrap; /* Preserve line breaks and wrap text */
+  max-width: 100%;
+}
+
+.item-info strong {
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.item-image-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.item-detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Scrollbar styles for the modal */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgb(17, 24, 39);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: rgb(55, 65, 81);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: rgb(75, 85, 99);
+}
+
+/* For Firefox */
+.modal-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(55, 65, 81) rgb(17, 24, 39);
+}
+
+/* Add to AdminItems.css */
+
+/* Style for the export button */
+.export-button {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background-color: #4caf50; /* Green color for export button */
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.export-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Ensure filter-section layout accommodates the export button */
+.filter-section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
